@@ -8,19 +8,29 @@ using UnityEngine.UI;
 
 public class FarmScript : MonoBehaviour
 {
-    public float Points = 0;
     public bool Inside = false;
     public Text Text;
-    void OnTriggerStay(Collider other)
+    public float Points;
+
+    private void OnTriggerEnter(Collider other)
     {
         Inside = true;
-        Points+= Time.deltaTime;
-        int vOut = Convert.ToInt32(Points);
-        Text.text = vOut.ToString() + "$";
+        Debug.Log(other.name);
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         Inside = false;
+        Debug.Log("left");
+    }
+    void Update()
+    {
+        if(Inside == true)
+        {
+            Points += Time.deltaTime;
+            int points = Convert.ToInt32(Points);
+            Text.text = points.ToString() + "$";
+        }
+
     }
 }
