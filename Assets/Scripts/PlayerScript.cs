@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
 
     public float Points;
 
+    
+
     // Update is called once per frame
     void Update()
     {

@@ -21,5 +21,7 @@ public class ShowText : MonoBehaviour
         ShopSign.position = Shop.position + Offset;
         ArmySign.position = Army.position + Offset;
         FarmSign.position = Farm.position + Offset;
+
+
     }
 }
