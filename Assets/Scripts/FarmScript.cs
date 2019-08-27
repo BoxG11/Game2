@@ -30,6 +30,10 @@ public class FarmScript : MonoBehaviour
             Points += Time.deltaTime;
             int points = Convert.ToInt32(Points);
             Text.text = points.ToString() + "$";
+
+            GameObject Player = GameObject.Find("Player");
+            PlayerScript playerScript = Player.GetComponent<PlayerScript>();
+            playerScript.Points = Points;
         }
 
     }
